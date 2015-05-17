@@ -2105,16 +2105,16 @@ The following table shows the result for comparison of different types, with the
 operand displayed vertically and the right displayed horizontally. 
 The conversions are performed according to [type conversion rules](08-conversions.md).
 
-|      | NULL | bool | int | float | string | array | object | resource |
-|:------|:---:|:----:|----:|:-----:|:------:|:-----:|:------:|:--------:|
-| NULL |  =   | ->   | ->  | ->    | ->     |   ->  | <      | <        |
-| bool | <-   | 1    | <-  | <-    | <-     |  <-   | <-     | <-       |
-| int  | <-   | ->   | 2   |   2   | <-     | <     |  3     | <-       |
-| float | <-  | ->   | 2   |  2    | <-     | <     |  3     | <-       |
-| string | <- | ->   | ->  |  ->   | 2, 4   | <     |  3     | 2        |
-| array | <-  | ->   | >   |  >    | >      | 5     |  3     | >        |
-| object | >  | ->   |  3  | 3     | 3      | 3     |  6     | 3        |
-| resource | > | ->  | ->  | ->    | 2      | <     |  3     | 2        |
+|          | NULL | bool | int  | float | string | array | object | resource |
+|:--------:|:----:|:----:|-----:|:-----:|:------:|:-----:|:------:|:--------:|
+| NULL     |  =   | `->` | `->` | `->`  | `->`   | `->`  | `<`    | `<`      |
+| bool     | `<-` | 1    | `<-` | `<-`  | `<-`   | `<-`  | `<-`   | `<-`     |
+| int      | `<-` | `->` |  2   |   2   | `<-`   | `<`   |  3     | `<-`     |
+| float    | `<-` | `->` |  2   |   2   | `<-`   | `<`   |  3     | `<-`     |
+| string   | `<-` | `->` | `->` | `->`  | 2, 4   | `<`   |  3     | 2        |
+| array    | `<-` | `->` | `>`  | `>`   | `>`    | 5     |  3     | >        |
+| object   | `>`  | `->` |  3   |  3    | 3      | 3     |  6     | 3        |
+| resource | `>`  | `->` | `->` | `->`  | 2      | `<`   |  3     | 2        |
 
  - `=` means the result is always "equals", i.e. strict comparisons are always `FALSE` and equality comparisons are always `TRUE`.
  - `<` means that the left operand is always less than the right operand.
